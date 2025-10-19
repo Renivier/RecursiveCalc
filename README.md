@@ -27,3 +27,18 @@ import calculator
 expr = "2*(3 + 4) - 5/2"
 result = calculator.calculate_expression(expr)
 print(result)  # Output: 10.5
+```
+or you can run standalone
+```python calculator.py```
+# Discord Bot Integration
+It can be directly integrated into a Discord bot:
+```python
+@bot.command()
+async def calculate(ctx, *, expression: str):
+    try:
+        result = calculator.calculate_expression(expression)
+        await ctx.send(f"Result: {result}")
+    except Exception as e:
+        await ctx.send(f"Error in calculation: {e}")
+```
+
